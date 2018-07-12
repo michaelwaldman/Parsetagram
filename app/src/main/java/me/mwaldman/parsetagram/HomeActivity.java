@@ -69,6 +69,8 @@ public class HomeActivity extends AppCompatActivity {
                     @Override
                     public void done(ParseException e) {
                         createPost(description, parseFile, user);
+                        Intent i = new Intent(HomeActivity.this, TimelineActivity.class);
+                        startActivity(i);
                     }
                 });
             }
