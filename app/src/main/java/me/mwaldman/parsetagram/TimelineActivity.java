@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -23,12 +24,13 @@ public class TimelineActivity extends AppCompatActivity {
     PostAdapter postAdapter;
     ArrayList<Post> posts;
     RecyclerView rvTimeline;
-
+    TextView tvTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
         context = getApplicationContext();
+        tvTime = findViewById(R.id.tvTime);
        // rvTimeline = findViewById(R.id.rvTimeline);
         rvPost = findViewById(R.id.rvTimeline);
         posts = new ArrayList<>();
@@ -36,6 +38,7 @@ public class TimelineActivity extends AppCompatActivity {
         rvPost.setLayoutManager(new LinearLayoutManager(context));
         rvPost.setAdapter(postAdapter);
         loadTopPosts();
+
     }
     private void loadTopPosts(){
         final Post.Query postQuery = new Post.Query();

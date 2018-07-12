@@ -16,4 +16,13 @@
         app:srcCompat="@android:color/background_dark"
         tools:layout_editor_absoluteX="175dp"
         tools:layout_editor_absoluteY="76dp" />
+
+    <TextView
+        android:id="@+id/tvDetailsDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/ivImage"
+        android:layout_marginBottom="224dp"
+        android:text="TextView" />
 </RelativeLayout>
