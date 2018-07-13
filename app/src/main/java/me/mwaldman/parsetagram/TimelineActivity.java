@@ -25,6 +25,7 @@ public class TimelineActivity extends AppCompatActivity {
     ArrayList<Post> posts;
     RecyclerView rvTimeline;
     TextView tvTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +39,51 @@ public class TimelineActivity extends AppCompatActivity {
         rvPost.setLayoutManager(new LinearLayoutManager(context));
         rvPost.setAdapter(postAdapter);
         loadTopPosts();
+        // Only ever call `setContentView` once right at the top
+        // Lookup the swipe conmwaainer view
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                fetchTimelineAsync(0);
+            }
+        });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
 
     }
+    public void fetchTimelineAsync(int page) {
+        final ArrayList<Post> newPosts;
+        // Send the network request to fetch the updated data
+        // `client` here is an instance of Android Async HTTP
+        final Post.Query postQuery = new Post.Query();
+        postQuery.getTop().withUser();
+        postQuery.findInBackground(new FindCallback<Post>() {
+            @Override
+            public void done(List<Post> objects, ParseException e) {
+                if(e==null){
+
+                    //// Remember to CLEAR OUT old items before appending in the new ones
+                        postAdapter.clear();
+                    postAdapter.addAll(objects);
+
+                    //                // ...the data has come back, add new items to your adapter...
+                    //                // Now we call setRefreshing(false) to signal refresh has finished
+                               swipeContainer.setRefreshing(false);
+                }
+                else{
+                    e.printStackTrace();
+                }
+            }
+        });}
+
     private void loadTopPosts(){
         final Post.Query postQuery = new Post.Query();
         postQuery.getTop().withUser();

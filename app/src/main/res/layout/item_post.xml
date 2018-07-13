@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/ivPost"
-        android:layout_width="205dp"
-        android:layout_height="107dp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="243dp"
+        android:layout_height="189dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         app:srcCompat="@android:color/black"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="48dp" />
@@ -20,17 +20,21 @@
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/tvDescription"
+        android:layout_alignStart="@+id/tvDescription"
+        android:layout_marginBottom="-214dp"
         android:text="Username"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="165dp" />
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_width="172dp"
+        android:layout_width="198dp"
         android:layout_height="73dp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="214dp"
         android:text="Description"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="194dp" />
@@ -39,8 +43,7 @@
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="103dp"
+        android:layout_alignEnd="@+id/tvDescription"
+        android:layout_alignTop="@+id/tvUsername"
         android:text="Time" />
 </RelativeLayout>

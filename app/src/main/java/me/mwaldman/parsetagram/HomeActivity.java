@@ -75,6 +75,7 @@ public class HomeActivity extends AppCompatActivity {
                 });
             }
         });
+
     }
     private void createPost(String description, ParseFile imageFile, ParseUser user){
         final Post newPost = new Post();
