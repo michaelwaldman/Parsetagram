@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/White"
     android:layout_height="match_parent"
     tools:context=".TimelineActivity">
 
@@ -19,6 +20,15 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true" />
 
-    </android.support.v4.widget.SwipeRefreshLayout>
 
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemTextColor="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:background="@color/Black"
+        app:menu="@menu/menu_bottom_navigation"
+        />
 </RelativeLayout>

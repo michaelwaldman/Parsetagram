@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".HomeActivity"
     tools:showIn="@layout/activity_home">
@@ -12,5 +13,13 @@
         android:layout_height="wrap_content"
         android:text="HOME ACTIVITY"/>
 
-
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemTextColor="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:background="@color/Black"
+        app:menu="@menu/menu_bottom_navigation"
+        />
 </android.support.constraint.ConstraintLayout>

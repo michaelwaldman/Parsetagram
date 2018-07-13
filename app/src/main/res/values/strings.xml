@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Parsetagram</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="home_button">Home</string>
+    <string name="compose">Compose</string>
+    <string name="logout">Log Out</string>
 </resources>

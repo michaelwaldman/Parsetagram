@@ -7,9 +7,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button refreshButton;
     private Button postButton;
     public final String APP_TAG = "MyCustomApp";
+    BottomNavigationView bottomNavigationView;
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
     File photoFile;
@@ -44,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         descriptionInput = findViewById(R.id.description_et);
         createButton = findViewById(R.id.create_btn);
-        refreshButton = findViewById(R.id.refresh_btn);
         postButton = findViewById(R.id.post_btn);
         createButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -52,12 +55,7 @@ public class HomeActivity extends AppCompatActivity {
               onLaunchCamera();
             }
         });
-        refreshButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                loadTopPosts();
-            }
-        });
+
         postButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -73,6 +71,30 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 });
+            }
+        });
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.compose:
+                        Intent i = new Intent(HomeActivity.this, HomeActivity.class);
+                        startActivity(i);
+
+                        return true;
+                    case R.id.home:
+                        Intent i2 = new Intent(HomeActivity.this, TimelineActivity.class);
+                        startActivity(i2);
+                        return true;
+                    case R.id.logout:
+                        ParseUser.logOut();
+                        Intent i3 = new Intent(HomeActivity.this, MainActivity.class);
+                        startActivity(i3);
+                        ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null                        return true;
+                }
+                return false;
             }
         });
 

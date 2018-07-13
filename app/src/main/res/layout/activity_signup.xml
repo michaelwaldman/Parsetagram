@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/White"
     tools:context=".SignupActivity">
 
     <Button
@@ -24,6 +25,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="163dp"
+        android:textColor="@color/Black"
+android:textColorHint="@color/Black"
         android:hint="password"
         android:inputType="textPersonName" />
 
@@ -34,7 +37,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="220dp"
+        android:textColorHint="@color/Black"
+
         android:hint="email "
+        android:textColor="@color/Black"
+
         android:inputType="textPersonName" />
 
     <EditText
@@ -43,6 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/Black"
+        android:textColorHint="@color/Black"
+
         android:layout_marginTop="102dp"
         android:hint="username"
         android:inputType="textPersonName" />

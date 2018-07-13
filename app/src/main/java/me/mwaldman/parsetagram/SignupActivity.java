@@ -57,7 +57,7 @@ Context context;
                             Intent i = new Intent(SignupActivity.this, MainActivity.class);
                             startActivity(i);
                         } else {
-                            Toast.makeText(context, "ladsfhkasf", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Error signing up", Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                             System.out.println("Error is " + e.getMessage());
                         }
