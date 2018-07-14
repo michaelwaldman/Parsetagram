@@ -43,6 +43,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+![Walkthrough](./instagif3.gif)
 
 <img src='https://imgur.com/eLeKdzi' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
