@@ -34,7 +34,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp"
-        app:srcCompat="@android:color/holo_blue_bright" />
+        app:srcCompat="@android:color/black" />
 
     <Button
         android:id="@+id/post_btn"
@@ -53,4 +53,13 @@
         android:background="@color/Black"
         app:menu="@menu/menu_bottom_navigation"
         />
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="355dp"
+        android:layout_height="33dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="15dp"
+        android:visibility="invisible" />
 </RelativeLayout>

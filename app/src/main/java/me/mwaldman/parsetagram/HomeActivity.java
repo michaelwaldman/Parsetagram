@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
@@ -39,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button postButton;
     public final String APP_TAG = "MyCustomApp";
     BottomNavigationView bottomNavigationView;
+    ProgressBar pb;
     public final static int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 1034;
     public String photoFileName = "photo.jpg";
     File photoFile;
@@ -66,6 +68,11 @@ public class HomeActivity extends AppCompatActivity {
                 parseFile.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
+                        ProgressBar pb = (ProgressBar) findViewById(R.id.pbLoading);
+                        pb.setVisibility(ProgressBar.VISIBLE);
+// run a background job and once complete
+                        pb.setVisibility(ProgressBar.INVISIBLE);
+
                         createPost(description, parseFile, user);
                         Intent i = new Intent(HomeActivity.this, TimelineActivity.class);
                         startActivity(i);

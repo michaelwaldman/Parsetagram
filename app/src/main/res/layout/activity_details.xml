@@ -25,15 +25,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/ivImage"
-        android:textColor="@color/Black"
-        android:layout_marginBottom="189dp"
-        android:text="TextView" />
+        android:layout_marginBottom="178dp"
+        android:text="TextView"
+        android:textColor="@color/Black" />
 
     <TextView
         android:id="@+id/tvUsernameDetails"
         android:layout_width="wrap_content"
+        android:layout_alignStart="@id/tvDetailsDescription"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tvDetailsDescription"
+        android:layout_above="@id/tvDetailsDescription"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="214dp"
         android:textColor="@color/Black"

@@ -31,4 +31,5 @@
         android:background="@color/Black"
         app:menu="@menu/menu_bottom_navigation"
         />
+
 </RelativeLayout>

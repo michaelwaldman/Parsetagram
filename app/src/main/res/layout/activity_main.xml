@@ -9,27 +9,27 @@
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="wrap_content"
+        android:layout_width="278dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="204dp"
         android:ems="10"
         android:hint="username"
-        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="textPersonName"
         android:textColor="@color/Black"
-        android:inputType="textPersonName" />
+        android:textColorHint="@color/colorPrimaryDark" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="274dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColorHint="@color/colorPrimaryDark"
         android:ems="10"
         android:hint="password"
+        android:inputType="textPassword"
         android:textColor="@color/Black"
-        android:inputType="textPassword" />
+        android:textColorHint="@color/colorPrimaryDark" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -38,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="153dp"
-        android:fontFamily="@font/alfa_slab_one"
+        android:fontFamily="@font/actor"
         android:text="Login" />
 
     <Button
@@ -48,7 +48,16 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="85dp"
-        android:fontFamily="@font/alfa_slab_one"
+        android:fontFamily="@font/actor"
         android:text="Register" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="81dp"
+        app:srcCompat="@drawable/nav_logo_whiteout" />
 
 </RelativeLayout>
