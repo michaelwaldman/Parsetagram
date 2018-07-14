@@ -13,7 +13,7 @@
         android:layout_height="228dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="70dp"
         app:srcCompat="@android:color/background_dark"
 
         tools:layout_editor_absoluteX="175dp"
@@ -59,5 +59,49 @@
 
         app:menu="@menu/menu_bottom_navigation"
         />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:background="@android:color/white"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="232dp"
+                android:layout_height="49dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="60dp"
+                app:srcCompat="@drawable/nav_logo_whiteout" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="14dp"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="33dp"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                app:srcCompat="@drawable/direct" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
 
 </RelativeLayout>
